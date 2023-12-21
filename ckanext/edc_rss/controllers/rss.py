@@ -5,6 +5,7 @@ import ckan.lib.render as lib_render
 import datetime
 import time
 
+from ckan.common import c
 from ckan.plugins.toolkit import config, response
 
 import pprint
