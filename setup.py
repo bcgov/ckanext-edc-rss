@@ -4,7 +4,7 @@ import sys, os
 version = '2.0.1'
 
 setup(
-    name='ckanext-edc-rss',
+    name='edc-rss',
     version=version,
     description="",
     long_description='''
