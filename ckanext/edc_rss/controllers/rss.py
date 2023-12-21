@@ -5,8 +5,7 @@ import ckan.lib.render as lib_render
 import datetime
 import time
 
-from ckan.common import _, c, response
-from pylons import config
+from ckan.plugins.toolkit import config, response
 
 import pprint
 
@@ -45,7 +44,7 @@ class RSSController(base.BaseController):
 
         vars = { 'results': results, 'count': count, 'base_url': base_url }
 
-        response.content_type = 'xml'
+        response.content_type = 'text/xml'
 
         return render('recent.html', extra_vars=vars)
 
