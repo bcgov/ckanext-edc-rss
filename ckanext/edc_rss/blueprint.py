@@ -34,8 +34,6 @@ def recent():
     query = get_action('package_search')(context, data_dict)
     count = query['count']
     results = query['results']
-    print("Original Results:")
-    pprint.pprint(results)
 
     for result in results:
         if 'record_publish_date' in result:
