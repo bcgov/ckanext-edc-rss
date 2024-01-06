@@ -6,7 +6,7 @@ from flask import Blueprint
 
 rss_blueprint = Blueprint('rss_blueprint', __name__)
 @rss_blueprint.route('/feeds/recent.rss', endpoint='recent')
-def recent(self):
+def recent():
 
     context =  {
         'model': model,
