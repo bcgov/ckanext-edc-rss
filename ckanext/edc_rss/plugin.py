@@ -1,7 +1,7 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from routes.mapper import SubMapper
-from .blueprint import rss_blueprint
+from blueprint import rss_blueprint
 
 
 class EDCRSSPlugin(plugins.SingletonPlugin):
