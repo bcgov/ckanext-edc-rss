@@ -7,7 +7,7 @@ import time
 from flask import Blueprint
 # from ckan.common import _, c, response, config
 from ckan.common import _, c, config
-#TODO: Remove above line and find alternative source for response
+from flask.wrappers import Response
 import pprint
 
 get_action = logic.get_action
@@ -45,6 +45,6 @@ def recent():
 
     vars = { 'results': results, 'count': count, 'base_url': base_url }
 
-    response.content_type = 'xml'
+    # Response.content_type = 'xml'
 
     return render('recent.html', extra_vars=vars)
