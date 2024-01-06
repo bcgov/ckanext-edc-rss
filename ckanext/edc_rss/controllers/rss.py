@@ -6,7 +6,7 @@ import datetime
 import time
 from flask import Blueprint
 
-from ckan.common import _, c, response, config
+from ckan.common import _, c, config
 
 import pprint
 
@@ -45,7 +45,7 @@ class RSSController(base.BaseController):
 
         vars = { 'results': results, 'count': count, 'base_url': base_url }
 
-        response.content_type = 'xml'
+        # response.content_type = 'xml'
 
         return render('recent.html', extra_vars=vars)
 
