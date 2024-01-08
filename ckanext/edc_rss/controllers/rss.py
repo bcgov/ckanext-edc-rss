@@ -5,8 +5,6 @@ import ckan.lib.render as lib_render
 import datetime
 import time
 from flask import Blueprint
-import logging
-import json
 
 
 # from ckan.common import _, c, response, config
@@ -17,7 +15,6 @@ import pprint
 
 get_action = logic.get_action
 render = base.render
-log = logging.getLogger('ckanext.edc_rss')
 
 
 class RSSController(base.BaseController):
@@ -41,7 +38,6 @@ class RSSController(base.BaseController):
         query = get_action('package_search')(context, data_dict)
         count = query['count']
         results = query['results']
-        log.info('Results: ' + json.dumps(results))
         for result in results:
             if 'record_publish_date' in result:
                 timestamp = time.mktime(datetime.datetime.strptime(result['record_publish_date'], "%Y-%m-%d").timetuple())

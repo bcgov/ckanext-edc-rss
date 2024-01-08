@@ -8,10 +8,13 @@ from flask import Blueprint
 # from ckan.common import _, c, response, config
 from ckan.common import _, c, config
 from flask.wrappers import Response
-import pprint
+import logging
+import json
+
 
 get_action = logic.get_action
 render = base.render
+log = logging.getLogger('ckanext.edc_rss')
 
 rss_blueprint = Blueprint('rss_blueprint', __name__)
 @rss_blueprint.route('/feeds/recent.rss', endpoint='recent')
@@ -34,6 +37,7 @@ def recent():
     query = get_action('package_search')(context, data_dict)
     count = query['count']
     results = query['results']
+    log.info('results: ' + json.dumps(results))
 
     for result in results:
         if 'record_publish_date' in result:
