@@ -35,10 +35,10 @@ def recent():
     count = query['count']
     results = query['results']
 
-    # for result in results:
-    #     if 'record_publish_date' in result:
-    #         timestamp = time.mktime(datetime.datetime.strptime(result['record_publish_date'], "%Y-%m-%d").timetuple())
-    #         result['record_publish_date'] = datetime.datetime.fromtimestamp(int(timestamp)).strftime('%a, %d %b %Y %H:%M:%S PST')
+    for result in results:
+        if 'record_publish_date' in result:
+            timestamp = time.mktime(datetime.datetime.strptime(result['record_publish_date'], "%Y-%m-%d").timetuple())
+            result['record_publish_date'] = datetime.datetime.fromtimestamp(int(timestamp)).strftime('%a, %d %b %Y %H:%M:%S PST')
 
 
     base_url = config.get('ckan.site_url')
