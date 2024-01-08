@@ -28,7 +28,7 @@ def recent():
 
     data_dict = {
         'q' : '+metadata_visibility:Public',
-        'fq': '+edc_state:("PUBLISHED" OR "PENDING ARCHIVE")',
+        'fq': '+publish_state:("PUBLISHED" OR "PENDING ARCHIVE")',
         'start': 0,
         'rows': 50,
         'sort': 'record_publish_date desc, metadata_modified desc',
