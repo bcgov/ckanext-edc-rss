@@ -4,7 +4,7 @@ import ckan.logic as logic
 import ckan.lib.render as lib_render
 import datetime
 import time
-from flask import Blueprint
+from flask import Blueprint, render_template
 # from ckan.common import _, c, response, config
 from ckan.common import _, c, config
 from flask.wrappers import Response
@@ -37,7 +37,7 @@ def recent():
     query = get_action('package_search')(context, data_dict)
     count = query['count']
     results = query['results']
-    log.info('results: ' + json.dumps(results))
+    # log.info('results: ' + json.dumps(results))
 
     for result in results:
         if 'record_publish_date' in result:
@@ -51,4 +51,4 @@ def recent():
 
     Response.content_type = 'xml'
 
-    return render('recent.html', extra_vars=vars)
+    return render_template('recent.html', extra_vars=vars)
