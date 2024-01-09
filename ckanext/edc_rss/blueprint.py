@@ -4,7 +4,7 @@ import ckan.logic as logic
 import ckan.lib.render as lib_render
 import datetime
 import time
-from flask import Blueprint, render_template
+from flask import Blueprint
 # from ckan.common import _, c, response, config
 from ckan.common import _, c, config
 from flask.wrappers import Response
@@ -51,4 +51,4 @@ def recent():
 
     Response.content_type = 'xml'
 
-    return render_template('recent.html', extra_vars=vars)
+    return render('recent.html', extra_vars=vars)
