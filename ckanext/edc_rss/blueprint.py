@@ -49,6 +49,6 @@ def recent():
 
     vars = { 'results': results, 'count': count, 'base_url': base_url }
 
-    Response.content_type = 'xml'
+    Response.content_type = 'text/xml'
 
     return render('recent.html', extra_vars=vars)
