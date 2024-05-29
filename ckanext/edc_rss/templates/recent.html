@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
 <title>
@@ -13,8 +13,8 @@ An RSS Feed of the contents of the Province of British Columbia's Data Catalogue
     <item>
         <title>{{ result.title }}</title>
         <description>{{ result.notes }}</description>
-        <link>{{ base_url }}{{ h.url_for(controller='package', action='read', id=result.name) }}</link>
-        <guid>{{ base_url }}{{ h.url_for(controller='package', action='read', id=result.id) }}</guid>
+        <link>{{ base_url }}{{ h.url_for(controller='dataset', action='read', id=result.name) }}</link>
+        <guid>{{ base_url }}{{ h.url_for(controller='dataset', action='read', id=result.id) }}</guid>
         <pubDate>{% if result.record_publish_date %}{{ result.record_publish_date }}{% else %}{{ result.publish_date }}{% endif %}</pubDate>
     </item>
 {% endfor %}
